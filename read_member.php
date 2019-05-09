@@ -31,7 +31,12 @@ $row = mysqli_num_rows($query);
     <div class="container-fluid">
 
 <?php
+
+// จำนวนตาราง
 echo "<h3 class='mb-4'>พบข้อมูลทั้งหมด " . $row . " รายการ</h3>";
+
+// ปุ่ม Add Member
+echo "<p><a href='create_member.php' class='btn btn-success'>Add Member</a></p>";
 
 // loop show data
 echo "
@@ -41,7 +46,10 @@ echo "
                 <th>ID</th>
                 <th>Fullname</th>
                 <th>Email</th>
-                <th>tel</th>
+                <th>Tel</th>
+                <th>Password</th>
+                <th>Status</th>
+                <th>Manage</th>
             </tr>
         </thead>
         <tbody>";
@@ -54,6 +62,12 @@ while ($data = mysqli_fetch_assoc($query))
                 <td>" . $data["fullname"] . "</td>
                 <td>" . $data["email"] . "</td>
                 <td>" . $data["tel"] . "</td>
+                <td>" . $data["password"] . "</td>
+                <td>" . $data["status"] . "</td>
+                <td>
+                    <a href='update_member.php?id=" . $data["id"] . "'class='btn btn-warning'>Edit</a>
+                    <a href='delete_member.php?id=" . $data["id"] . "'class='btn btn-danger'>Delete</a>
+                </td>
             </tr>";
 }
 echo "

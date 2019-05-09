@@ -31,10 +31,11 @@ if (!empty($_POST["submit"]))
     if ($query)
     {
         $msg = "<div class='alert alert-success' role='alert'>Edit member success</div>";
+        echo "<meta http-equiv='refresh' content='1;URL=\"read_member.php\"'>";
     }
     else
     {
-        $msg = "<div class='alert alert-success' role='alert'>Edit member fail!</div>";
+        $msg = "<div class='alert alert-danger' role='alert'>Edit member fail!</div>";
     }
 
 }
@@ -106,6 +107,7 @@ $data         = mysqli_fetch_assoc($query_select);
             <div class="form-group row">
                 <div class="offset-sm-3 col-sm-9">
                     <input type="submit" class="btn btn-primary" name="submit">
+                    <a href='read_member.php' class='btn btn-primary'>Back</a>
                 </div>
             </div>
         </form>
