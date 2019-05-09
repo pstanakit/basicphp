@@ -17,5 +17,9 @@ echo "<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus tota
 echo "Thank You..."
 ?>
 
+<?php
+echo "Thank You....................."
+?>
+
 </body>
 </html>
